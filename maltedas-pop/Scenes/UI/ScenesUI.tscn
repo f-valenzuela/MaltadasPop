@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://c80mso4mnvd5r"]
+
+[ext_resource type="Script" uid="uid://belap4dm64kim" path="res://Scenes/UI/ScenesUI.gd" id="1_1ovcp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu6xs"]
+font_size = 75
+
+[node name="ScenesUI" type="Control"]
+layout_mode = 3
+anchor_top = 0.93333334
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_1ovcp")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Counter" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CounterLabel" type="Label" parent="HBoxContainer/Counter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main"
+label_settings = SubResource("LabelSettings_uu6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CounterButton" type="Button" parent="HBoxContainer/Counter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Mixer" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MixerLabel" type="Label" parent="HBoxContainer/Mixer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mix"
+label_settings = SubResource("LabelSettings_uu6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MixerButton" type="Button" parent="HBoxContainer/Mixer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Toppings" type="Panel" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ToppingsLabel" type="Label" parent="HBoxContainer/Toppings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Toppings"
+label_settings = SubResource("LabelSettings_uu6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ToppingsButton" type="Button" parent="HBoxContainer/Toppings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="HBoxContainer/Counter/CounterButton" to="." method="_on_counter_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Mixer/MixerButton" to="." method="_on_mixer_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Toppings/ToppingsButton" to="." method="_on_toppings_button_pressed"]

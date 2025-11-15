@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5e8fgf5smace"]
+
+[ext_resource type="Script" uid="uid://dry0m6w4bpgtn" path="res://Characters/CharacterPersonalitation.gd" id="1_xstj2"]
+[ext_resource type="Script" uid="uid://bufkfiljv7oey" path="res://Characters/BodyPart.gd" id="2_aup41"]
+[ext_resource type="Texture2D" uid="uid://b7pjd781tydra" path="res://Characters/RedotIcon.png" id="2_cbe6a"]
+
+[node name="CharacterPersonalitation" type="Node2D"]
+script = ExtResource("1_xstj2")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="BodyMarker" type="Marker2D" parent="." node_paths=PackedStringArray("sprite")]
+position = Vector2(540, 1182)
+script = ExtResource("2_aup41")
+sprite = NodePath("Sprite2D")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="BodyMarker"]
+scale = Vector2(20, 20)
+texture = ExtResource("2_cbe6a")
+
+[node name="EyesMarker" type="Marker2D" parent="." node_paths=PackedStringArray("sprite", "mirror_sprite")]
+position = Vector2(539, 655)
+script = ExtResource("2_aup41")
+sprite = NodePath("Sprite2D2")
+mirror_sprite = NodePath("Sprite2D")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="EyesMarker"]
+position = Vector2(-85, 0)
+texture = ExtResource("2_cbe6a")
+
+[node name="Sprite2D" type="Sprite2D" parent="EyesMarker"]
+position = Vector2(85, 0)
+texture = ExtResource("2_cbe6a")
+
+[node name="HeadMarker" type="Marker2D" parent="." node_paths=PackedStringArray("sprite")]
+position = Vector2(540, 637)
+script = ExtResource("2_aup41")
+sprite = NodePath("Sprite2D")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HeadMarker"]
+scale = Vector2(8, 8)
+texture = ExtResource("2_cbe6a")
+
+[node name="HairMarker" type="Marker2D" parent="." node_paths=PackedStringArray("sprite")]
+position = Vector2(540, 532)
+script = ExtResource("2_aup41")
+sprite = NodePath("Sprite2D")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HairMarker"]
+scale = Vector2(8.075, 3.585)
+texture = ExtResource("2_cbe6a")

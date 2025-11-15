@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterTextures" load_steps=4 format=3 uid="uid://bhd4edmem4kh"]
+
+[ext_resource type="Texture2D" uid="uid://b7pjd781tydra" path="res://Characters/RedotIcon.png" id="1_5i3ke"]
+[ext_resource type="Script" uid="uid://c0uvd5e200vuf" path="res://Characters/Assets/CharacterTextures.gd" id="1_36e0q"]
+[ext_resource type="Texture2D" uid="uid://sdqy7sswdjkq" path="res://Characters/TestEnemy1.png" id="2_x2pbs"]
+
+[resource]
+script = ExtResource("1_36e0q")
+eyes_textures = Array[Texture]([ExtResource("1_5i3ke"), ExtResource("2_x2pbs")])
+head_textures = Array[Texture]([ExtResource("1_5i3ke"), ExtResource("2_x2pbs")])
+hair_textures = Array[Texture]([ExtResource("1_5i3ke"), ExtResource("2_x2pbs")])
+body_textures = Array[Texture]([ExtResource("1_5i3ke"), ExtResource("2_x2pbs")])
+metadata/_custom_type_script = "uid://c0uvd5e200vuf"
