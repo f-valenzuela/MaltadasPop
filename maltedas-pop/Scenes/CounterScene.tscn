@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdlhwbsgn4p7"]
+[gd_scene load_steps=13 format=3 uid="uid://cdlhwbsgn4p7"]
 
-[ext_resource type="Texture2D" uid="uid://cd54sdfwn8cm4" path="res://TestMainArea.jpg" id="1_622xi"]
 [ext_resource type="Script" uid="uid://bb2uwx01mwjfy" path="res://Scenes/scene.gd" id="1_y004j"]
+[ext_resource type="Texture2D" uid="uid://sxvc50ecpg53" path="res://Backgrounds/SmoothieStage/Backgroud_02.png" id="2_wpfky"]
+[ext_resource type="Texture2D" uid="uid://7kf3ei3o5fm7" path="res://Smoothie_Stage/Malteadera_Bottom.png" id="3_1k5bh"]
 [ext_resource type="PackedScene" uid="uid://c80mso4mnvd5r" path="res://Scenes/UI/ScenesUI.tscn" id="3_07fon"]
+[ext_resource type="Texture2D" uid="uid://bv1tt4airfuxs" path="res://Smoothie_Stage/Malteadera_Top.png" id="4_a6xkn"]
+[ext_resource type="Texture2D" uid="uid://c5qrgnqq6trc7" path="res://Smoothie_Stage/Buttons/Simple_Glasses_Button.png" id="5_6j6dn"]
+[ext_resource type="Texture2D" uid="uid://b33l6tm0ay64t" path="res://Smoothie_Stage/Buttons/Complete_Glasses_Button.png" id="6_0yxxs"]
+[ext_resource type="Texture2D" uid="uid://wkckg5lwdmsa" path="res://Smoothie_Stage/Buttons/drawer_ingridients.png" id="7_r67et"]
+[ext_resource type="Texture2D" uid="uid://d4g2t02qh23ls" path="res://Smoothie_Stage/Buttons/recipient_button_base.png" id="8_722qr"]
+[ext_resource type="Texture2D" uid="uid://xmvda17lkh8m" path="res://Smoothie_Stage/Buttons/icecream_dulcedeleche.png" id="9_a08r0"]
+[ext_resource type="Texture2D" uid="uid://de8h54yydf17b" path="res://Smoothie_Stage/Buttons/icecream_vanilla.png" id="10_ra7ar"]
+[ext_resource type="Texture2D" uid="uid://becrmn5goxgnh" path="res://Smoothie_Stage/Buttons/icecream_chocolate.png" id="11_jx0w6"]
 
 [node name="CounterScene" type="Control" node_paths=PackedStringArray("scenes_ui")]
 layout_mode = 3
@@ -15,21 +24,222 @@ script = ExtResource("1_y004j")
 scenes_ui = NodePath("ScenesUI")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009259259
+anchor_top = 0.0036458333
+anchor_right = 2.0092592
+anchor_bottom = 2.003646
+offset_left = -10.0
+offset_top = -7.0
+offset_right = -1090.0
+offset_bottom = -1927.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wpfky")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 1811.0
+offset_right = 1080.0
+offset_bottom = 1920.0
+
+[node name="MixingStage" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_622xi")
 metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Malteadera" type="Control" parent="MixingStage"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Malteadora_Screen" type="TextureRect" parent="MixingStage/Malteadera"]
 layout_mode = 0
-offset_top = 1381.8171
-offset_right = 1080.0
-offset_bottom = 1920.0
+offset_left = 411.0
+offset_top = 158.0
+offset_right = 668.0
+offset_bottom = 617.0
+texture = ExtResource("3_1k5bh")
+expand_mode = 1
+
+[node name="Malteadora_Top" type="TextureRect" parent="MixingStage/Malteadera"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 96.0
+offset_right = 819.0
+offset_bottom = 1331.5
+texture = ExtResource("4_a6xkn")
+expand_mode = 1
+
+[node name="SimpleGlasses" type="Control" parent="MixingStage"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/SimpleGlasses"]
+layout_mode = 0
+offset_left = 802.0
+offset_top = 849.0
+offset_right = 1236.0
+offset_bottom = 1301.0
+texture = ExtResource("5_6j6dn")
+expand_mode = 1
+
+[node name="CompleteGlasses" type="Control" parent="MixingStage"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/CompleteGlasses"]
+layout_mode = 0
+offset_left = -131.0
+offset_top = 822.0
+offset_right = 266.0
+offset_bottom = 1308.5
+texture = ExtResource("6_0yxxs")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MixingStage"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.029440561
+anchor_right = 0.79
+anchor_bottom = 0.065000005
+offset_top = 0.95983887
+offset_right = -388.2
+offset_bottom = -155.85901
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3862392, 7.3679233)
+theme_override_constants/separation = 335
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="IngridientDrawers" type="Control" parent="MixingStage/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.78300005
+offset_right = 275.0
+offset_bottom = 0.051994324
+texture = ExtResource("7_r67et")
+expand_mode = 1
+
+[node name="IngridientDrawers2" type="Control" parent="MixingStage/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.8
+offset_right = 275.0
+offset_bottom = 0.051994324
+texture = ExtResource("7_r67et")
+expand_mode = 1
+
+[node name="IngridientDrawers3" type="Control" parent="MixingStage/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers3"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+offset_right = 275.0
+offset_bottom = 0.051994324
+texture = ExtResource("7_r67et")
+expand_mode = 1
+
+[node name="IngridientDrawers4" type="Control" parent="MixingStage/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.78300005
+offset_right = 275.0
+offset_bottom = 0.051994324
+texture = ExtResource("7_r67et")
+expand_mode = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MixingStage"]
+layout_mode = 0
+offset_top = 1531.0
+offset_right = 1083.0
+offset_bottom = 1919.0
+theme_override_constants/h_separation = 280
+
+[node name="Control2" type="Control" parent="MixingStage/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer/Control2"]
+layout_mode = 0
+offset_right = 422.0
+offset_bottom = 388.0
+texture = ExtResource("8_722qr")
+expand_mode = 1
+
+[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/Control2/TextureRect"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 51.0
+offset_right = 367.0
+offset_bottom = 388.5
+texture = ExtResource("9_a08r0")
+expand_mode = 1
+
+[node name="Control3" type="Control" parent="MixingStage/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer/Control3"]
+layout_mode = 0
+offset_right = 422.0
+offset_bottom = 388.0
+texture = ExtResource("8_722qr")
+expand_mode = 1
+
+[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/Control3/TextureRect"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 51.0
+offset_right = 367.0
+offset_bottom = 388.5
+texture = ExtResource("10_ra7ar")
+expand_mode = 1
+
+[node name="Control4" type="Control" parent="MixingStage/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer/Control4"]
+layout_mode = 0
+offset_right = 422.0
+offset_bottom = 388.0
+texture = ExtResource("8_722qr")
+expand_mode = 1
+
+[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/Control4/TextureRect"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 51.0
+offset_right = 367.0
+offset_bottom = 388.5
+texture = ExtResource("11_jx0w6")
+expand_mode = 1
 
 [node name="ScenesUI" parent="." instance=ExtResource("3_07fon")]
 layout_mode = 1
