@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdlhwbsgn4p7"]
+[gd_scene load_steps=16 format=3 uid="uid://cdlhwbsgn4p7"]
 
 [ext_resource type="Script" uid="uid://bb2uwx01mwjfy" path="res://Scenes/scene.gd" id="1_y004j"]
 [ext_resource type="Texture2D" uid="uid://sxvc50ecpg53" path="res://Backgrounds/SmoothieStage/Backgroud_02.png" id="2_wpfky"]
@@ -8,8 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://c5qrgnqq6trc7" path="res://Smoothie_Stage/Buttons/Simple_Glasses_Button.png" id="5_6j6dn"]
 [ext_resource type="Texture2D" uid="uid://b33l6tm0ay64t" path="res://Smoothie_Stage/Buttons/Complete_Glasses_Button.png" id="6_0yxxs"]
 [ext_resource type="Texture2D" uid="uid://wkckg5lwdmsa" path="res://Smoothie_Stage/Buttons/drawer_ingridients.png" id="7_r67et"]
+[ext_resource type="Texture2D" uid="uid://bf2ona450an3j" path="res://Ingridients/Icons/Brownie_Ingridient_UI.png" id="8_6j6dn"]
 [ext_resource type="Texture2D" uid="uid://d4g2t02qh23ls" path="res://Smoothie_Stage/Buttons/recipient_button_base.png" id="8_722qr"]
+[ext_resource type="Texture2D" uid="uid://bfs3fvasa4ye3" path="res://Ingridients/Icons/Mani_Ingridient_UI.png" id="9_0yxxs"]
 [ext_resource type="Texture2D" uid="uid://xmvda17lkh8m" path="res://Smoothie_Stage/Buttons/icecream_dulcedeleche.png" id="9_a08r0"]
+[ext_resource type="Texture2D" uid="uid://dsrhwv1xc0v4e" path="res://Ingridients/Icons/StrawberryChips_Ingridient_UI.png" id="10_r67et"]
 [ext_resource type="Texture2D" uid="uid://de8h54yydf17b" path="res://Smoothie_Stage/Buttons/icecream_vanilla.png" id="10_ra7ar"]
 [ext_resource type="Texture2D" uid="uid://becrmn5goxgnh" path="res://Smoothie_Stage/Buttons/icecream_chocolate.png" id="11_jx0w6"]
 
@@ -110,136 +113,129 @@ expand_mode = 1
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.5
-anchor_top = -0.029440561
-anchor_right = 0.79
-anchor_bottom = 0.065000005
-offset_top = 0.95983887
-offset_right = -388.2
-offset_bottom = -155.85901
+anchor_top = 0.7140625
+anchor_right = 1.074074
+anchor_bottom = 0.76927084
+offset_left = -45.0
+offset_right = 1115.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.3862392, 7.3679233)
-theme_override_constants/separation = 335
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 105
 alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="IngridientDrawers" type="Control" parent="MixingStage/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.78300005
-offset_right = 275.0
-offset_bottom = 0.051994324
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 8.65
 texture = ExtResource("7_r67et")
-expand_mode = 1
 
-[node name="IngridientDrawers2" type="Control" parent="MixingStage/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 30.000015
+offset_top = -181.99997
+offset_right = 530.0
+offset_bottom = 318.00003
+rotation = -0.13962634
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(244.20535, 282.24707)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 8.65
+texture = ExtResource("8_6j6dn")
+
+[node name="TextureRect5" type="TextureRect" parent="MixingStage/HBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.8
-offset_right = 275.0
-offset_bottom = 0.051994324
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 8.65
 texture = ExtResource("7_r67et")
-expand_mode = 1
 
-[node name="IngridientDrawers3" type="Control" parent="MixingStage/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/TextureRect5"]
+layout_mode = 0
+offset_left = 30.000015
+offset_top = -203.99997
+offset_right = 530.0
+offset_bottom = 296.00003
+rotation = -0.13962634
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(244.20535, 282.24707)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 8.65
+texture = ExtResource("9_0yxxs")
+
+[node name="TextureRect6" type="TextureRect" parent="MixingStage/HBoxContainer"]
 layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers3"]
-layout_direction = 2
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.8
-offset_right = 275.0
-offset_bottom = 0.051994324
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 8.65
 texture = ExtResource("7_r67et")
-expand_mode = 1
 
-[node name="IngridientDrawers4" type="Control" parent="MixingStage/HBoxContainer"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/TextureRect6"]
+layout_mode = 0
+offset_left = 30.000015
+offset_top = -197.99997
+offset_right = 530.0
+offset_bottom = 302.00003
+rotation = -0.13962634
+scale = Vector2(0.35, 0.35)
+pivot_offset = Vector2(244.20535, 282.24707)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+size_flags_stretch_ratio = 8.65
+texture = ExtResource("10_r67et")
 
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HBoxContainer/IngridientDrawers4"]
-layout_mode = 1
-anchors_preset = -1
-anchor_bottom = 0.78300005
-offset_right = 275.0
-offset_bottom = 0.051994324
-texture = ExtResource("7_r67et")
-expand_mode = 1
-
-[node name="HFlowContainer" type="HFlowContainer" parent="MixingStage"]
+[node name="HFlowContainer" type="HBoxContainer" parent="MixingStage"]
 layout_mode = 0
 offset_top = 1531.0
-offset_right = 1083.0
-offset_bottom = 1919.0
-theme_override_constants/h_separation = 280
+offset_right = 2544.0
+offset_bottom = 2307.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 105
+alignment = 1
 
-[node name="Control2" type="Control" parent="MixingStage/HFlowContainer"]
+[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer/Control2"]
-layout_mode = 0
-offset_right = 422.0
-offset_bottom = 388.0
 texture = ExtResource("8_722qr")
-expand_mode = 1
 
-[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/Control2/TextureRect"]
+[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/TextureRect"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 51.0
-offset_right = 367.0
-offset_bottom = 388.5
+offset_left = 113.0
+offset_top = 101.0
+offset_right = 749.0
+offset_bottom = 776.0
 texture = ExtResource("9_a08r0")
-expand_mode = 1
 
-[node name="Control3" type="Control" parent="MixingStage/HFlowContainer"]
+[node name="TextureRect2" type="TextureRect" parent="MixingStage/HFlowContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer/Control3"]
-layout_mode = 0
-offset_right = 422.0
-offset_bottom = 388.0
 texture = ExtResource("8_722qr")
-expand_mode = 1
 
-[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/Control3/TextureRect"]
+[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/TextureRect2"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 51.0
-offset_right = 367.0
-offset_bottom = 388.5
-texture = ExtResource("10_ra7ar")
-expand_mode = 1
-
-[node name="Control4" type="Control" parent="MixingStage/HFlowContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="TextureRect" type="TextureRect" parent="MixingStage/HFlowContainer/Control4"]
-layout_mode = 0
-offset_right = 422.0
-offset_bottom = 388.0
-texture = ExtResource("8_722qr")
-expand_mode = 1
-
-[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/Control4/TextureRect"]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 51.0
-offset_right = 367.0
-offset_bottom = 388.5
+offset_left = 113.0
+offset_top = 101.0
+offset_right = 749.0
+offset_bottom = 776.0
 texture = ExtResource("11_jx0w6")
-expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="MixingStage/HFlowContainer"]
+layout_mode = 2
+texture = ExtResource("8_722qr")
+
+[node name="icecream" type="TextureRect" parent="MixingStage/HFlowContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 101.0
+offset_right = 749.0
+offset_bottom = 776.0
+texture = ExtResource("10_ra7ar")
+
+[node name="Control2" type="AspectRatioContainer" parent="MixingStage/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="ScenesUI" parent="." instance=ExtResource("3_07fon")]
 layout_mode = 1
