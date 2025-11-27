@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="CharacterTextures" load_steps=16 format=3 uid="uid://bhd4edmem4kh"]
+
+[ext_resource type="Script" uid="uid://c0uvd5e200vuf" path="res://Characters/Assets/CharacterTextures.gd" id="1_36e0q"]
+[ext_resource type="Texture2D" uid="uid://c2ep038guywfp" path="res://Characters/Assets/cuerpos/body_type_1.png" id="1_w4kcw"]
+[ext_resource type="Texture2D" uid="uid://qjtlqcctroun" path="res://Characters/Assets/features/eyebrow_type_1.png" id="2_oxrrp"]
+[ext_resource type="Texture2D" uid="uid://c02jkumdl187w" path="res://Characters/Assets/features/eyebrow_type_2.png" id="3_yvowg"]
+[ext_resource type="Texture2D" uid="uid://chwwh7wn0hhmg" path="res://Characters/Assets/features/eyes_schlera_type_1.png" id="4_omqiw"]
+[ext_resource type="Texture2D" uid="uid://b2b4274e3vxs6" path="res://Characters/Assets/features/eyes_skin_type_1.png" id="5_wrjvo"]
+[ext_resource type="Texture2D" uid="uid://oygaima04aky" path="res://Characters/Assets/features/eyes_skin_type_2.png" id="6_56giv"]
+[ext_resource type="Texture2D" uid="uid://b5xer53tytfi1" path="res://Characters/Assets/faces/face_type_1.png" id="7_ne1of"]
+[ext_resource type="Texture2D" uid="uid://ds4s8u15sn3of" path="res://Characters/Assets/faces/face_type_2.png" id="8_6d0jp"]
+[ext_resource type="Texture2D" uid="uid://c5cd0b021b6vx" path="res://Characters/Assets/hair/hairstyle_type_1.png" id="9_6of8e"]
+[ext_resource type="Texture2D" uid="uid://dd8jttk7yqldf" path="res://Characters/Assets/features/eyes_iris_type_1.png" id="10_tmetm"]
+[ext_resource type="Texture2D" uid="uid://bnjxuntqe0f7r" path="res://Characters/Assets/features/mouth_type_1.png" id="11_6dujy"]
+[ext_resource type="Texture2D" uid="uid://bov6nvw2m72br" path="res://Characters/Assets/features/mouth_type_2.png" id="12_1g4f0"]
+[ext_resource type="Texture2D" uid="uid://bkwmcokxe3xk6" path="res://Characters/Assets/features/nose_type_1.png" id="13_gh1s7"]
+[ext_resource type="Texture2D" uid="uid://ccqd2bqyh8d3e" path="res://Characters/Assets/features/nose_type_2.png" id="14_3k18j"]
+
+[resource]
+script = ExtResource("1_36e0q")
+eyes_textures = Array[Texture]([ExtResource("5_wrjvo"), ExtResource("6_56giv")])
+face_textures = Array[Texture]([ExtResource("7_ne1of"), ExtResource("8_6d0jp")])
+brows_textures = Array[Texture]([ExtResource("2_oxrrp"), ExtResource("3_yvowg")])
+eyes_back_textures = Array[Texture]([ExtResource("4_omqiw")])
+iris_textures = Array[Texture]([ExtResource("10_tmetm")])
+eyes_front_textures = Array[Texture]([ExtResource("5_wrjvo"), ExtResource("6_56giv")])
+mouth_textures = Array[Texture]([ExtResource("11_6dujy"), ExtResource("12_1g4f0")])
+nose_textures = Array[Texture]([ExtResource("13_gh1s7"), ExtResource("14_3k18j")])
+hair_textures = Array[Texture]([ExtResource("9_6of8e")])
+body_textures = Array[Texture]([ExtResource("1_w4kcw")])
+metadata/_custom_type_script = "uid://c0uvd5e200vuf"

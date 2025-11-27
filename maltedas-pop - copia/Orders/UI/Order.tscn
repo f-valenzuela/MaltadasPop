@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://c14lo4mj2gtws"]
+
+[ext_resource type="Texture2D" uid="uid://dvdojyy62gajx" path="res://UI_Assets/NINEPATCH3.png" id="1_77yg5"]
+[ext_resource type="Script" uid="uid://cnuu6v074hcxs" path="res://Orders/UI/Order.gd" id="1_hnbmn"]
+[ext_resource type="Texture2D" uid="uid://dm5wnhq775v6u" path="res://UI_Assets/NINEPATCH2.png" id="1_k82oy"]
+[ext_resource type="PackedScene" uid="uid://dhsdj62lcotmn" path="res://Scenes/Mixer/MixerGlass.tscn" id="2_k82oy"]
+[ext_resource type="Texture2D" uid="uid://dpgg5umam5byq" path="res://UI_Assets/NINEPATCH1.png" id="3_kff85"]
+[ext_resource type="Texture2D" uid="uid://dhu5gw6f0ufj5" path="res://Smoothie_Stage/Glasses/Complete_glass_top.png" id="5_77yg5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jpg7c"]
+texture = ExtResource("3_kff85")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p36bd"]
+texture = ExtResource("1_k82oy")
+
+[node name="Order" type="NinePatchRect" node_paths=PackedStringArray("progress_bar", "order_texture")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_77yg5")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+script = ExtResource("1_hnbmn")
+progress_bar = NodePath("VBoxContainer2/Control/VBoxContainer/ProgressBar")
+order_texture = NodePath("VBoxContainer2/Control/VBoxContainer/OrderTexture")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer2/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer2/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+theme_override_styles/background = SubResource("StyleBoxTexture_jpg7c")
+theme_override_styles/fill = SubResource("StyleBoxTexture_p36bd")
+value = 58.1
+show_percentage = false
+
+[node name="Filler" type="Control" parent="VBoxContainer2/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="OrderTexture" type="TextureRect" parent="VBoxContainer2/Control/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("5_77yg5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Filler2" type="Control" parent="VBoxContainer2/Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="MixerGlass" parent="VBoxContainer2/Control/VBoxContainer" instance=ExtResource("2_k82oy")]
+layout_mode = 2
+size_flags_vertical = 3
+debug_glass_type = 0
+
+[node name="Control" type="Control" parent="VBoxContainer2/Control/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="DebugButton" type="Button" parent="VBoxContainer2/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="pressed" from="VBoxContainer2/Control/DebugButton" to="." method="_on_debug_button_pressed"]

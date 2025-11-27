@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="OrderData" load_steps=3 format=3 uid="uid://chkxthsvub5u6"]
+
+[ext_resource type="Script" uid="uid://cbg8wdhdmfhyb" path="res://Orders/OrderData/OrderData.gd" id="1_vlhsp"]
+[ext_resource type="Texture2D" uid="uid://born38b3e7bt3" path="res://icon.svg" id="2_14fu1"]
+
+[resource]
+script = ExtResource("1_vlhsp")
+name = "jnhgn"
+texture = ExtResource("2_14fu1")
+duration = 30.0
+good_duration = 10.0
+good_multiplier = 2.0
+ok_duration = 10.0
+ok_multiplier = 1.0
+bad_multiplier = 0.5
+metadata/_custom_type_script = "uid://cbg8wdhdmfhyb"

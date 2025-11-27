@@ -1,0 +1,201 @@
+[gd_scene load_steps=9 format=3 uid="uid://dhsdj62lcotmn"]
+
+[ext_resource type="Script" uid="uid://dktonmarg0ip3" path="res://Scenes/Mixer/MixerGlass.gd" id="1_6lx4c"]
+[ext_resource type="Texture2D" uid="uid://dg802ovtrvbm0" path="res://Smoothie_Stage/Glasses/Complete_Glass_Bottom.png" id="2_xlqgr"]
+[ext_resource type="Texture2D" uid="uid://by8gsqnibbuix" path="res://Smoothie_Stage/Glasses/CompleteGlassMask.png" id="3_78726"]
+[ext_resource type="Texture2D" uid="uid://dm5wnhq775v6u" path="res://UI_Assets/NINEPATCH2.png" id="4_8k3v4"]
+[ext_resource type="Texture2D" uid="uid://dhu5gw6f0ufj5" path="res://Smoothie_Stage/Glasses/Complete_glass_top.png" id="4_qi7eu"]
+[ext_resource type="Texture2D" uid="uid://lr20v4v0yx0n" path="res://Smoothie/Assets/toopings/cookie_top.png" id="10_xkqyu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_a4noq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8k3v4"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="MixerGlass" type="Control" node_paths=PackedStringArray("progress_bar_node", "deco_texture_node", "glass_back_node", "glass_mask_node", "glass_front_node", "ice_cream_node", "secondary_flavor_node", "topping_node")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6lx4c")
+progress_bar_node = NodePath("MixingProgressBar")
+deco_texture_node = NodePath("Deco")
+glass_back_node = NodePath("GlassBack")
+glass_mask_node = NodePath("GlassMask")
+glass_front_node = NodePath("GlassFront")
+ice_cream_node = NodePath("GlassMask/IceCream")
+secondary_flavor_node = NodePath("GlassMask/SecondaryFlavor")
+topping_node = NodePath("Topping")
+debug_glass_type = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="GlassBack" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xlqgr")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="GlassMask" type="TextureRect" parent="."]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_78726")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="IceCream" type="TextureRect" parent="GlassMask"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.103125
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="SecondaryFlavor" type="TextureRect" parent="GlassMask"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.103125
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="GlassFront" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_a4noq")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.9999999
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qi7eu")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Deco" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="ClickerArea" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MixingProgressBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.09010417
+anchor_right = 1.0
+anchor_bottom = -0.0328125
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 1.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="MixingProgressBar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49907407
+anchor_right = 0.5009259
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21296297
+anchor_top = 0.94114584
+anchor_right = 0.787037
+anchor_bottom = 1.0541667
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_8k3v4")
+metadata/_edit_use_anchors_ = true
+
+[node name="CompleteButton" type="Button" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Ready"
+label_settings = SubResource("LabelSettings_8k3v4")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Topping" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.096296296
+anchor_top = -0.34010416
+anchor_right = 1.0962963
+anchor_bottom = 0.33072916
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Topping2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.065907516
+anchor_top = -0.26770833
+anchor_right = 0.93409246
+anchor_bottom = 0.15729167
+texture = ExtResource("10_xkqyu")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="ClickerArea" to="." method="_on_clicker_area_pressed"]
+[connection signal="pressed" from="NinePatchRect/CompleteButton" to="." method="_on_complete_button_pressed"]

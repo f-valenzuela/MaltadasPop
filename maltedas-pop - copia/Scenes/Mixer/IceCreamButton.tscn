@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbw8edrf06v0x"]
+
+[ext_resource type="Texture2D" uid="uid://d4g2t02qh23ls" path="res://Smoothie_Stage/Buttons/recipient_button_base.png" id="1_wjhji"]
+[ext_resource type="Script" uid="uid://dpctkhndvy7b3" path="res://Scenes/Mixer/IceCreamButton.gd" id="2_3hyqo"]
+[ext_resource type="Texture2D" uid="uid://xmvda17lkh8m" path="res://Smoothie_Stage/Buttons/icecream_dulcedeleche.png" id="2_cpmrc"]
+
+[node name="IceCreamButton" type="TextureRect" node_paths=PackedStringArray("ice_cream_texture")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_wjhji")
+expand_mode = 1
+script = ExtResource("2_3hyqo")
+ice_cream_texture = NodePath("MarginContainer/IceCreamButton/IceCreamTexture")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="IceCreamButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="IceCreamTexture" type="TextureRect" parent="MarginContainer/IceCreamButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cpmrc")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/IceCreamButton" to="." method="_on_ice_cream_button_pressed"]

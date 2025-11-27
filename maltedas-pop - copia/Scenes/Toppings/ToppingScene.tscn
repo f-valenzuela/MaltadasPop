@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct1mfvx37nnpk"]
+
+[ext_resource type="Texture2D" uid="uid://dbenqmksvyxuj" path="res://Assets/TestToppingArea.jpg" id="2_0l3ol"]
+[ext_resource type="Script" uid="uid://dcwswokyitbqy" path="res://Scenes/Toppings/SmootieToppings.gd" id="3_udlsi"]
+[ext_resource type="PackedScene" uid="uid://2ijuicd5egsc" path="res://Scenes/Toppings/DecorationButton.tscn" id="4_0l3ol"]
+[ext_resource type="PackedScene" uid="uid://dbsnf6hya3b6" path="res://Scenes/Toppings/Topping.tscn" id="5_0l3ol"]
+
+[node name="ToppingScene" type="Control" node_paths=PackedStringArray("decorations_container", "toppings_node")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_udlsi")
+decorations_container = NodePath("DecorationContainer")
+toppings_node = NodePath("ToppingsNode")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0l3ol")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Glass" type="Control" parent="."]
+anchors_preset = 0
+anchor_left = 0.49814814
+anchor_top = 0.5708333
+anchor_right = 0.49814814
+anchor_bottom = 0.5708333
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Glass"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = -159.0
+offset_right = 106.0
+offset_bottom = 172.0
+color = Color(1, 1, 1, 0.409)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Glass"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = -159.0
+offset_right = 106.0
+offset_bottom = 172.0
+
+[node name="CompleteButton" type="Button" parent="Glass"]
+layout_mode = 0
+offset_left = -74.0
+offset_top = 205.0
+offset_right = 74.0
+offset_bottom = 241.0
+text = "Ready"
+
+[node name="Decorations" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DecorationMarker" type="Marker2D" parent="Decorations"]
+position = Vector2(0, -156)
+
+[node name="Decoration" type="ColorRect" parent="Decorations/DecorationMarker"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -29.0
+offset_right = 126.0
+offset_bottom = 5.0
+grow_vertical = 2
+
+[node name="ToppingsNode" type="Node2D" parent="."]
+
+[node name="Topping" parent="ToppingsNode" instance=ExtResource("5_0l3ol")]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(105, 1260)
+
+[node name="Topping2" parent="ToppingsNode" instance=ExtResource("5_0l3ol")]
+modulate = Color(0, 1, 0, 1)
+position = Vector2(226, 1181)
+type = 1
+
+[node name="DecorationContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -337.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DecorationButton" parent="DecorationContainer" instance=ExtResource("4_0l3ol")]
+layout_mode = 2
+current_decoration = 1
+
+[node name="ToppingButton2" parent="DecorationContainer" instance=ExtResource("4_0l3ol")]
+layout_mode = 2
+current_decoration = 2
+
+[node name="ToppingButton3" parent="DecorationContainer" instance=ExtResource("4_0l3ol")]
+layout_mode = 2
+current_decoration = 3
+
+[connection signal="pressed" from="Glass/CompleteButton" to="." method="_on_complete_button_pressed"]

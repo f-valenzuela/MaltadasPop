@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy2ovv8rovcg2"]
+
+[ext_resource type="Script" uid="uid://tp2f6mgo64h7" path="res://Scenes/Mixer/GlassButton.gd" id="1_v38mq"]
+[ext_resource type="Texture2D" uid="uid://b33l6tm0ay64t" path="res://Smoothie_Stage/Buttons/Complete_Glasses_Button.png" id="2_slq83"]
+
+[node name="GlassButton" type="Button" node_paths=PackedStringArray("texture_rect")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("1_v38mq")
+texture_rect = NodePath("TextureRect")
+debug_mode = true
+glass_type = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_slq83")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

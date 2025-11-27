@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdlhwbsgn4p7"]
+
+[ext_resource type="Script" uid="uid://drc480621yup3" path="res://Scenes/CounterScene.gd" id="1_laobg"]
+[ext_resource type="Texture2D" uid="uid://dc6uykxvr4h0s" path="res://Backgrounds/CharacterStage/Backgroud_01_noCounter.jpg" id="3_laobg"]
+[ext_resource type="Texture2D" uid="uid://dp0sa71fyb4kh" path="res://Backgrounds/CharacterStage/Backgroud_01_Counter.png" id="4_jadl8"]
+[ext_resource type="Texture2D" uid="uid://dw4atj6l80re0" path="res://Backgrounds/CharacterStage/Backgroud_01_Menu.png" id="5_0g636"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eyo18"]
+
+[node name="CounterScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_laobg")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 1.5
+anchor_bottom = 1.5
+offset_left = 540.0
+offset_top = 960.0
+offset_right = -540.0
+offset_bottom = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_laobg")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HumansContainer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 1.5
+anchor_bottom = 1.5
+offset_left = 540.0
+offset_top = 960.0
+offset_right = -540.0
+offset_bottom = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_jadl8")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 1.5
+anchor_bottom = 1.5
+offset_left = 540.0
+offset_top = 960.0
+offset_right = -540.0
+offset_bottom = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_0g636")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = -0.5
+anchor_right = 1.5
+anchor_bottom = 1.5
+offset_left = 540.0
+offset_top = 960.0
+offset_right = -540.0
+offset_bottom = -960.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CompressedTexture2D_eyo18")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,190 @@
+[gd_scene load_steps=11 format=3 uid="uid://brdvbilsx7tm3"]
+
+[ext_resource type="Script" uid="uid://dgbvl8lnw1vew" path="res://Scenes/Mixer/SmoothieMixer.gd" id="1_cj0ht"]
+[ext_resource type="Texture2D" uid="uid://sxvc50ecpg53" path="res://Backgrounds/SmoothieStage/Backgroud_02.png" id="2_u5wxy"]
+[ext_resource type="Texture2D" uid="uid://7kf3ei3o5fm7" path="res://Smoothie_Stage/Malteadera_Bottom.png" id="3_qjd2s"]
+[ext_resource type="Texture2D" uid="uid://bv1tt4airfuxs" path="res://Smoothie_Stage/Malteadera_Top.png" id="4_865qp"]
+[ext_resource type="PackedScene" uid="uid://dy2ovv8rovcg2" path="res://Scenes/Mixer/GlassButton.tscn" id="4_tqvv3"]
+[ext_resource type="Script" uid="uid://bt3qd02115pox" path="res://Orders/OrderSteps.gd" id="6_qjd2s"]
+[ext_resource type="PackedScene" uid="uid://dbw8edrf06v0x" path="res://Scenes/Mixer/IceCreamButton.tscn" id="8_iqbuq"]
+[ext_resource type="PackedScene" uid="uid://dhsdj62lcotmn" path="res://Scenes/Mixer/MixerGlass.tscn" id="9_u5wxy"]
+[ext_resource type="PackedScene" uid="uid://bj5yunnj0e7of" path="res://Scenes/Mixer/SecondaryFlavorButton.tscn" id="10_865qp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cj0ht"]
+
+[node name="SmoothieMixerScene" type="Control" node_paths=PackedStringArray("ice_cream_container", "glass_buttons_container", "order_steps", "glass", "secondary_ingredients_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cj0ht")
+ice_cream_container = NodePath("IceCreamContainer")
+glass_buttons_container = NodePath("GlassButtons")
+order_steps = NodePath("Malteadera/Malteadora_Screen/OrderSteps")
+glass = NodePath("Glass")
+secondary_ingredients_container = NodePath("SecondaryIngredientsContainer")
+
+[node name="Backgraund" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -0.00012207031
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_u5wxy")
+expand_mode = 1
+
+[node name="GlassButtons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GlassButton" parent="GlassButtons" instance=ExtResource("4_tqvv3")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72407407
+anchor_top = 0.346875
+anchor_right = 1.0870371
+anchor_bottom = 0.73333335
+grow_horizontal = 1
+grow_vertical = 1
+debug_mode = false
+
+[node name="GlassButton3" parent="GlassButtons" instance=ExtResource("4_tqvv3")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.14444445
+anchor_top = 0.34583333
+anchor_right = 0.21851853
+anchor_bottom = 0.73229164
+grow_horizontal = 1
+grow_vertical = 1
+debug_mode = false
+glass_type = 1
+
+[node name="Malteadera" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -1.0
+offset_bottom = -1.0001221
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Malteadora_Screen" type="TextureRect" parent="Malteadera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.38055557
+anchor_top = 0.08229167
+anchor_right = 0.61851853
+anchor_bottom = 0.32135418
+offset_left = -3.0517578e-05
+offset_right = -6.1035156e-05
+texture = ExtResource("3_qjd2s")
+expand_mode = 1
+
+[node name="OrderSteps" type="Control" parent="Malteadera/Malteadora_Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_qjd2s")
+
+[node name="MarginContainer" type="MarginContainer" parent="Malteadera/Malteadora_Screen/OrderSteps"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = -40
+
+[node name="MixerGlass" parent="Malteadera/Malteadora_Screen/OrderSteps/MarginContainer" instance=ExtResource("9_u5wxy")]
+material = SubResource("CanvasItemMaterial_cj0ht")
+layout_mode = 2
+debug_glass_type = 0
+
+[node name="Malteadora_Top" type="TextureRect" parent="Malteadera"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.23981482
+anchor_top = 0.04947917
+anchor_right = 0.7592593
+anchor_bottom = 0.69375
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_865qp")
+expand_mode = 1
+
+[node name="IceCreamContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7973958
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="IceCreamButton" parent="IceCreamContainer" instance=ExtResource("8_iqbuq")]
+layout_mode = 2
+current_flavor = 1
+
+[node name="IceCreamButton2" parent="IceCreamContainer" instance=ExtResource("8_iqbuq")]
+layout_mode = 2
+current_flavor = 2
+
+[node name="IceCreamButton3" parent="IceCreamContainer" instance=ExtResource("8_iqbuq")]
+layout_mode = 2
+current_flavor = 3
+
+[node name="SecondaryIngredientsContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7078125
+anchor_right = 1.0
+anchor_bottom = 0.7796875
+offset_right = 1080.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 105
+alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="SecondaryFlavorButton" parent="SecondaryIngredientsContainer" instance=ExtResource("10_865qp")]
+layout_mode = 2
+debug_mode = false
+
+[node name="SecondaryFlavorButton2" parent="SecondaryIngredientsContainer" instance=ExtResource("10_865qp")]
+layout_mode = 2
+debug_mode = false
+flavor_type = 2
+
+[node name="Glass" parent="." instance=ExtResource("9_u5wxy")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.49583334
+anchor_right = 0.6
+anchor_bottom = 0.6958333
+debug_glass_type = 0
+
+[connection signal="finished" from="Glass" to="." method="_on_glass_finished"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://yjxwgj2xk1vl"
+path="res://.godot/imported/botonesengeneral.ogg-af42d7fa2d5b9cf32ad7a6532ad56dbf.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/efectos especiales/botonesengeneral.ogg"
+dest_files=["res://.godot/imported/botonesengeneral.ogg-af42d7fa2d5b9cf32ad7a6532ad56dbf.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

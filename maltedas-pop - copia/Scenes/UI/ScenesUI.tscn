@@ -1,0 +1,131 @@
+[gd_scene load_steps=4 format=3 uid="uid://c80mso4mnvd5r"]
+
+[ext_resource type="Script" uid="uid://belap4dm64kim" path="res://Scenes/UI/ScenesUI.gd" id="1_1ovcp"]
+[ext_resource type="Texture2D" uid="uid://dvdojyy62gajx" path="res://UI_Assets/NINEPATCH3.png" id="2_0fxvg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu6xs"]
+font_size = 75
+font_color = Color(0, 0, 0, 1)
+
+[node name="ScenesUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ovcp")
+metadata/_edit_use_anchors_ = true
+
+[node name="Size" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1792.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Size"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Counter" type="NinePatchRect" parent="Size/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_0fxvg")
+patch_margin_left = 3
+patch_margin_top = 2
+patch_margin_right = 3
+patch_margin_bottom = 2
+
+[node name="CounterLabel" type="Label" parent="Size/HBoxContainer/Counter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Counter"
+label_settings = SubResource("LabelSettings_uu6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CounterButton" type="Button" parent="Size/HBoxContainer/Counter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Mixer" type="NinePatchRect" parent="Size/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_0fxvg")
+patch_margin_left = 3
+patch_margin_top = 2
+patch_margin_right = 3
+patch_margin_bottom = 2
+
+[node name="MixerLabel" type="Label" parent="Size/HBoxContainer/Mixer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Mix"
+label_settings = SubResource("LabelSettings_uu6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MixerButton" type="Button" parent="Size/HBoxContainer/Mixer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="Toppings" type="NinePatchRect" parent="Size/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_0fxvg")
+patch_margin_left = 3
+patch_margin_top = 2
+patch_margin_right = 3
+patch_margin_bottom = 2
+
+[node name="ToppingsLabel" type="Label" parent="Size/HBoxContainer/Toppings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Toppings"
+label_settings = SubResource("LabelSettings_uu6xs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ToppingsButton" type="Button" parent="Size/HBoxContainer/Toppings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[connection signal="button_down" from="Size/HBoxContainer/Counter/CounterButton" to="." method="_on_counter_button_pressed"]
+[connection signal="button_down" from="Size/HBoxContainer/Mixer/MixerButton" to="." method="_on_mixer_button_pressed"]
+[connection signal="button_down" from="Size/HBoxContainer/Toppings/ToppingsButton" to="." method="_on_toppings_button_pressed"]

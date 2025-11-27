@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhgl8mmfvle6v"]
+
+[ext_resource type="Script" uid="uid://dmlkxavn8wg2u" path="res://Orders/UI/OrderSlot.gd" id="1_bwrs5"]
+
+[node name="OrderSlot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_bwrs5")
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://2ijuicd5egsc"]
+
+[ext_resource type="Texture2D" uid="uid://d4g2t02qh23ls" path="res://Smoothie_Stage/Buttons/recipient_button_base.png" id="1_2lb4x"]
+[ext_resource type="Script" uid="uid://kt52g7xo72bt" path="res://Scenes/Toppings/DecorationButton.gd" id="2_0mhtk"]
+
+[node name="DecorationButton" type="TextureRect" node_paths=PackedStringArray("decoration_texture")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_2lb4x")
+expand_mode = 1
+script = ExtResource("2_0mhtk")
+decoration_texture = NodePath("MarginContainer/Topping/ToppingTexture")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="Topping" type="Button" parent="MarginContainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ToppingTexture" type="ColorRect" parent="MarginContainer/Topping"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="MarginContainer/Topping" to="." method="_on_decoration_button_pressed"]

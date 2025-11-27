@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://wwil272r1y7y"
+path="res://.godot/imported/cuandocaeelproducto.ogg-ac2f035da836cc3496a51201923dd40e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/efectos especiales/cuandocaeelproducto.ogg"
+dest_files=["res://.godot/imported/cuandocaeelproducto.ogg-ac2f035da836cc3496a51201923dd40e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

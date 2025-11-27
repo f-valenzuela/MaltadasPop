@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxi7sxyni3eci"]
+
+[ext_resource type="PackedScene" uid="uid://6fgfl5obcf8w" path="res://Scenes/Scenes.tscn" id="1_lgr22"]
+[ext_resource type="Script" uid="uid://b5awwpbbbxng0" path="res://GameManager.gd" id="1_trn2v"]
+[ext_resource type="PackedScene" uid="uid://buk7iq6fs2fmt" path="res://Orders/OrdersUI/OrdersUI.tscn" id="4_cm0pq"]
+[ext_resource type="Script" uid="uid://bxsdjr57u6usk" path="res://Orders/OrdersManager.gd" id="4_lgr22"]
+[ext_resource type="Script" uid="uid://cbg8wdhdmfhyb" path="res://Orders/OrderData/OrderData.gd" id="5_03owx"]
+[ext_resource type="Resource" uid="uid://bsjqe4t8g6g6w" path="res://Orders/OrderData/TestOrder.tres" id="6_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://c80mso4mnvd5r" path="res://Scenes/UI/ScenesUI.tscn" id="11_5vvyt"]
+[ext_resource type="Script" uid="uid://bigylqv5nu81h" path="res://PointsCalculator.gd" id="11_20pc6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_20pc6"]
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_5vvyt"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkp8b"]
+font_size = 71
+
+[node name="Main" type="Node" node_paths=PackedStringArray("smoothie_mixer", "smoothie_toppings")]
+script = ExtResource("1_trn2v")
+smoothie_mixer = NodePath("Scenes/MixerScene")
+smoothie_toppings = NodePath("Scenes/ToppingScene")
+
+[node name="Scenes" parent="." node_paths=PackedStringArray("camera", "Scenes_ui") instance=ExtResource("1_lgr22")]
+camera = NodePath("../Camera2D")
+Scenes_ui = NodePath("../Top/ScenesUI")
+
+[node name="Top" type="CanvasLayer" parent="."]
+
+[node name="ScenesUI" parent="Top" instance=ExtResource("11_5vvyt")]
+mouse_filter = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(540, 960)
+limit_enabled = false
+
+[node name="OrdersManager" type="Node" parent="."]
+script = ExtResource("4_lgr22")
+orders_amount = 3
+posible_orders = Array[ExtResource("5_03owx")]([ExtResource("6_wkp8b")])
+
+[node name="OrdersUI" parent="OrdersManager" instance=ExtResource("4_cm0pq")]
+
+[node name="SmoothieManager" type="Node" parent="."]
+
+[node name="PointsCalculator" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_20pc6")
+
+[node name="Panel" type="Panel" parent="PointsCalculator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.5
+offset_top = -542.0
+offset_right = 356.5
+offset_bottom = 414.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PointsCalculator/Panel"]
+layout_mode = 0
+offset_right = 713.0
+offset_bottom = 137.0
+text = "Points"
+label_settings = SubResource("LabelSettings_20pc6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PointsCalculator/Panel"]
+visible = false
+layout_mode = 0
+offset_top = 291.0
+offset_right = 713.0
+offset_bottom = 439.0
+label_settings = SubResource("LabelSettings_5vvyt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="PointsCalculator/Panel"]
+layout_mode = 0
+offset_top = 291.0
+offset_right = 713.0
+offset_bottom = 439.0
+text = "37"
+label_settings = SubResource("LabelSettings_5vvyt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="PointsCalculator/Panel"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 776.0
+offset_right = 581.0
+offset_bottom = 900.0
+text = "Ok"
+
+[node name="FinishButton" type="Button" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.33055556
+anchor_top = 0.6723958
+anchor_right = 0.69722223
+anchor_bottom = 0.71979165
+offset_top = 152.0
+offset_bottom = 152.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="FinishButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Finish"
+label_settings = SubResource("LabelSettings_wkp8b")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="scene_changed" from="Top/ScenesUI" to="." method="_on_scene_changed"]
+[connection signal="order_selected" from="OrdersManager" to="." method="on_order_selected"]
+[connection signal="order_created" from="OrdersManager/OrdersUI" to="OrdersManager" method="on_order_created"]
+[connection signal="order_seleceted" from="OrdersManager/OrdersUI" to="OrdersManager" method="_on_order_seleceted"]
+[connection signal="pressed" from="PointsCalculator/Panel/Button" to="PointsCalculator" method="_on_button_pressed"]
+[connection signal="pressed" from="FinishButton" to="." method="_on_finish_button_pressed"]
+
+[editable path="Scenes"]

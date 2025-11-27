@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dyetfvyq3k31s"
+path="res://.godot/imported/liquido.ogg-0162d698e6b996bb168f0cb6ab29b78e.oggvorbisstr"
+
+[deps]
+
+source_file="res://Sound/efectos especiales/liquido.ogg"
+dest_files=["res://.godot/imported/liquido.ogg-0162d698e6b996bb168f0cb6ab29b78e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

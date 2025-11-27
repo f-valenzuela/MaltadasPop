@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbsnf6hya3b6"]
+
+[ext_resource type="Script" uid="uid://qoxdncg7eibj" path="res://Scenes/Toppings/Dragger.gd" id="1_pe8nr"]
+
+[node name="Topping" type="Node2D"]
+script = ExtResource("1_pe8nr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
